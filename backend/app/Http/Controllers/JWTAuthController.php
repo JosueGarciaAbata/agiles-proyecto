@@ -74,21 +74,24 @@ class JWTAuthController extends Controller
     public function getUser()
     {
         try {
-            if (!$user = JWTAuth::parseToken()->authenticate()) {
+            $user = JWTAuth::parseToken()->authenticate();
+            if (!$user) {
                 return response()->json(['error' => 'User not found'], 404);
             }
+            return response()->json(compact('user'), 200);
         } catch (JWTException $e) {
-            return response()->json(['error' => 'Invalid token'], 400);
+            return response()->json(['error' => 'Token invalid or expired', 'details' => $e->getMessage()], 401);
         }
-
-        return response()->json(compact('user'));
     }
 
     // User logout
     public function logout()
     {
-        JWTAuth::invalidate(JWTAuth::getToken());
-
-        return response()->json(['message' => 'Successfully logged out']);
+        try {
+            JWTAuth::invalidate(JWTAuth::getToken());
+            return response()->json(['message' => 'Successfully logged out'], 200);
+        } catch (JWTException $e) {
+            return response()->json(['error' => 'Could not logout', 'details' => $e->getMessage()], 500);
+        }
     }
 }

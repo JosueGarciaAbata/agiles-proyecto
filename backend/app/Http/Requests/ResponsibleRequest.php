@@ -7,7 +7,7 @@ use Illuminate\Validation\Rule;
 
 class ResponsibleRequest extends FormRequest
 {
-    
+
     public function authorize(): bool
     {
         return true;
@@ -16,15 +16,15 @@ class ResponsibleRequest extends FormRequest
     public function rules(): array
     {
         $rules = [
-            "dni_res" => "required|string|size:10", 
-            "nam_res" => "required|string|max:20", 
-            "las_res" => "required|string|max:20", 
-            "ema_res" => "required|email|max:50|unique:responsibles,ema_res", 
-            "pho_res" => "required|string|size:10|unique:responsibles,pho_res", 
-            "is_ext"  => "required|in:Y,N",
+            "dni_res" => "required|string|size:10|unique:responsibles,dni_res|unique:users,dni_usr",
+            "nam_res" => "required|string|max:20",
+            "las_res" => "required|string|max:20",
+            "ema_res" => "required|email|max:50|unique:responsibles,ema_res",
+            "pho_res" => "required|string|size:10|unique:responsibles,pho_res",
+            "is_ext" => "required|in:Y,N",
         ];
         if ($this->isMethod('put') || $this->isMethod('patch')) {
-            $rules["dni_res"]="nullable";
+            $rules["dni_res"] = "nullable";
             $rules['ema_res'] = [
                 'required',
                 'email',
@@ -41,7 +41,8 @@ class ResponsibleRequest extends FormRequest
         return $rules;
 
     }
-    public function messages(): array{
+    public function messages(): array
+    {
         return [
             "dni_res.required" => "El DNI es obligatorio.",
             "dni_res.string" => "El DNI debe ser una cadena de texto.",

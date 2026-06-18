@@ -16,17 +16,17 @@ class MaintenanceDetailRequest extends FormRequest
     {
         $rules = [
             'dni_res_main' => 'required|string|exists:responsibles,dni_res',
-            'cod_main'     => 'required|string|max:10|unique:maintenances,cod_main',
-            'id_typ_main'  => 'required|exists:type_maintenances,id',
-            'vis_main'     => 'nullable|in:V,H',
-            'ended_at'     => 'nullable|date|after:created_at',
-            'created_at'   => 'required|date',
+            'cod_main' => 'required|string|max:10|unique:maintenances,cod_main',
+            'id_typ_main' => 'required|exists:type_maintenances,id',
+            'vis_main' => 'nullable|in:V,H',
+            'ended_at' => 'nullable|date|after:created_at',
+            'created_at' => 'required|date',
 
             // Validar los assets
             'assets' => 'required|array',
             'assets.*.id' => 'required|exists:assets,id',
             'assets.*.observations' => 'nullable|array',
-            'assets.*.observations.*.des_obs' => 'required|string|regex:/^[a-zA-Z0-9\s]+$/',
+            'assets.*.observations.*.des_obs' => 'required|string',
             'assets.*.replaced_components' => 'nullable|array',
             'assets.*.replaced_components.*.id_com_bel' => 'required|exists:components,id',
             'assets.*.replaced_components.*.des_rep_com' => 'required|string',
@@ -42,7 +42,7 @@ class MaintenanceDetailRequest extends FormRequest
                 Rule::unique('maintenances', 'cod_main')->ignore($this->route('id')),
             ];
 
-            
+
         }
 
         return $rules;
@@ -52,17 +52,17 @@ class MaintenanceDetailRequest extends FormRequest
     {
         return [
             'dni_res_main.required' => 'La cédula del responsable es obligatoria.',
-            'dni_res_main.exists'   => 'El responsable especificado no existe.',
-            'cod_main.required'     => 'El código de mantenimiento es obligatorio.',
-            'cod_main.unique'       => 'El código de mantenimiento ya está en uso.',
-            'cod_main.max'          => 'El código de mantenimiento no puede superar los 10 caracteres.',
-            'id_typ_main.required'  => 'El tipo de mantenimiento es obligatorio.',
-            'id_typ_main.exists'    => 'El tipo de mantenimiento especificado no existe.',
-            'vis_main.in'           => 'La visibilidad debe ser uno de los siguientes: V (visible) o H (hidden).',
-            'ended_at.date'         => 'La fecha de finalización debe ser válida.',
-            'ended_at.after'        => 'La fecha de finalización debe ser posterior a la fecha de creación.',
-            'created_at.required'   => 'La fecha de creación es obligatoria.',
-            'created_at.date'       => 'La fecha de creación debe ser válida.',
+            'dni_res_main.exists' => 'El responsable especificado no existe.',
+            'cod_main.required' => 'El código de mantenimiento es obligatorio.',
+            'cod_main.unique' => 'El código de mantenimiento ya está en uso.',
+            'cod_main.max' => 'El código de mantenimiento no puede superar los 10 caracteres.',
+            'id_typ_main.required' => 'El tipo de mantenimiento es obligatorio.',
+            'id_typ_main.exists' => 'El tipo de mantenimiento especificado no existe.',
+            'vis_main.in' => 'La visibilidad debe ser uno de los siguientes: V (visible) o H (hidden).',
+            'ended_at.date' => 'La fecha de finalización debe ser válida.',
+            'ended_at.after' => 'La fecha de finalización debe ser posterior a la fecha de creación.',
+            'created_at.required' => 'La fecha de creación es obligatoria.',
+            'created_at.date' => 'La fecha de creación debe ser válida.',
 
             // Mensajes para assets
             'assets.required' => 'Los activos (assets) son obligatorios.',

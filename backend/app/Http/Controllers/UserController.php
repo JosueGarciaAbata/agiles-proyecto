@@ -28,7 +28,7 @@ class UserController extends Controller
                 "email" => "required|string|max:255|unique:users,email",
                 "password" => "required|string|max:255",
                 "role" => "nullable|string",
-                "dni_usr" => "required|string|size:10|unique:responsibles,dni_usr", 
+                "dni_usr" => "required|string|size:10|unique:users,dni_usr|unique:responsibles,dni_res",
             ], [
                 "email.unique" => "Correo electronico duplicado",
                 "dni_usr.unique" => "Cédula duplicada"
@@ -81,8 +81,10 @@ class UserController extends Controller
                 "name" => "required|string|max:255",
                 "email" => "required|string|max:255|unique:users,email,$id",
                 "password" => "nullable|string|max:255",
+                "role" => "required|string|in:admin,user"
             ], [
-                "email.unique" => "Correo electronico duplicado"
+                "email.unique" => "Correo electronico duplicado",
+                "role.in" => "El rol debe ser 'admin' o 'user'"
             ]);
             //si no esta quitarlo del arreglo
             if (!empty($validatedData["password"])) {
@@ -124,7 +126,7 @@ class UserController extends Controller
             "term" => "required|string|min:1|max:50",
         ]);
         $term = $request["term"] ?? "";
-        $users = User::where("email", "LIKE", "%$term%")->get();
+        $users = User::where("dni_usr", "LIKE", "%$term%")->get();
 
         return response()->json([
             "results" => $users,

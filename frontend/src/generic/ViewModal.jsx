@@ -55,7 +55,10 @@ const ViewModal = ({
 
   // Cuando intente actualizar validar todos los campos.
   const validateAll = () => {
-    const validationErrors = validateFields(entity, fields);
+    // Excluir password
+    const fieldsToValidate = fields.filter((field) => field.key !== "password");
+
+    const validationErrors = validateFields(entity, fieldsToValidate);
     setErrors(validationErrors);
     return Object.keys(validationErrors).length === 0;
   };

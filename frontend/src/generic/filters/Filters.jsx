@@ -1,17 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import Autocomplete from "@mui/material/Autocomplete";
+import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import Typography from "@mui/material/Typography";
 import { toast } from "react-toastify";
+import Chip from "@mui/material/Chip";
 
-const Filters = ({ data, onFilterChange, onClear }) => {
+const Filters = ({ data, onFilterChange, clearFilters, setClearFilters }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedValues, setSelectedValues] = useState({});
+
+  useEffect(() => {
+    if (clearFilters) {
+      setSelectedValues({});
+      onFilterChange({});
+      setClearFilters(false);
+    }
+  }, [clearFilters]);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -21,27 +32,17 @@ const Filters = ({ data, onFilterChange, onClear }) => {
     setAnchorEl(null);
   };
 
-  const handleCheckboxChange = (key, optionKey) => {
+  const handleAutocompleteChange = (key, newValue) => {
     setSelectedValues((prev) => {
-      const updated = {
-        ...prev,
-        [key]: {
-          ...prev[key],
-          [optionKey]: !prev[key]?.[optionKey],
-        },
-      };
-      // 1. Notificar al padre sobre los cambios realizados
+      const updated = { ...prev, [key]: newValue };
       onFilterChange(updated);
-
       return updated;
     });
   };
 
   const handleClearFilters = () => {
-    const clearedValues = {};
-    setSelectedValues(clearedValues);
-    onFilterChange(clearedValues);
-    onClear();
+    setSelectedValues({});
+    onFilterChange({});
   };
 
   return (
@@ -64,27 +65,54 @@ const Filters = ({ data, onFilterChange, onClear }) => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
         MenuListProps={{ style: { padding: 10 } }}
+        sx={{
+          "& .MuiPaper-root": {
+            width: "500px", // Ajusta el ancho del menú
+            maxHeight: "500px", // Limita la altura si hay muchos filtros
+            overflowY: "auto", // Añade scroll si el contenido supera la altura
+          },
+        }}
       >
         {data.map((item) => (
-          <Box key={item.key}>
+          <Box
+            key={item.key}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              marginLeft: "0.5rem",
+              marginRight: "1rem",
+            }}
+          >
             <Typography variant="subtitle2" sx={{ px: 2, py: 1 }}>
               {item.label}
             </Typography>
-            {item.options.map((option) => (
-              <MenuItem key={option.key} disableRipple>
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={selectedValues[item.key]?.[option.key] || false}
-                      onChange={() =>
-                        handleCheckboxChange(item.key, option.key)
-                      }
-                    />
-                  }
-                  label={option.label}
+            <Autocomplete
+              multiple
+              id={`filter-${item.key}`}
+              options={item.options}
+              getOptionLabel={(option) => option.label}
+              value={selectedValues[item.key] || []}
+              onChange={(event, newValue) =>
+                handleAutocompleteChange(item.key, newValue)
+              }
+              renderTags={(tagValue, getTagProps) =>
+                tagValue.map((option, index) => (
+                  <Chip
+                    key={option.key}
+                    label={option.label}
+                    {...getTagProps({ index })}
+                  />
+                ))
+              }
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  variant="outlined"
+                  placeholder="Seleccionar"
                 />
-              </MenuItem>
-            ))}
+              )}
+              sx={{ width: "100%" }}
+            />
           </Box>
         ))}
         {/* Botón para limpiar */}

@@ -45,6 +45,9 @@ const fieldRenderers = {
         fullWidth
         InputLabelProps={{ shrink: true }}
         InputProps={{ readOnly }}
+        sx={{
+          marginTop: "15px",
+        }}
       >
         {field.options.map((option) => (
           <MenuItem key={option.value} value={option.value}>

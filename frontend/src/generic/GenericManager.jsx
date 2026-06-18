@@ -26,16 +26,13 @@ const GenericManager = ({
   searchBy,
 }) => {
   const [entities, setEntities] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isDelete, setIsDelete] = useState(false);
+  const [isReady, setIsReady] = useState(false);
   const [modalCreateOpen, setModalCreateOpen] = useState(false);
   const [modalViewOpen, setModalViewOpen] = useState(false);
   const [modalDeleteOpen, setModalDeleteOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [entity, setEntity] = useState(defaultEntityState);
-
-  const [currentPage, setCurrentPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(3);
-
   const navigate = useNavigate();
   const decodedToken = getDecodedToken();
 
@@ -47,13 +44,6 @@ const GenericManager = ({
     navigate("/");
     return null;
   }
-
-  const handleChangePage = (event, newPage) => setCurrentPage(newPage);
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setCurrentPage(0);
-  };
 
   const fetchSearch = async (param) => {
     if (param === "") {
@@ -74,18 +64,17 @@ const GenericManager = ({
   const fetchEntities = async () => {
     try {
       const response = await axiosInstance.get(apiConfig.fetchAll);
-      console.log(response);
       setEntities(response?.data?.results);
     } catch (error) {
       handleError(error, `Error inesperado al obtener ${entityNamePlural}`);
     } finally {
-      setIsLoading(false);
+      setIsReady(true);
     }
   };
 
   const handleCreate = async (item) => {
-    console.log("Creando...", item);
     try {
+      console.log(item);
       await axiosInstance.post(apiConfig.create, item);
       await fetchEntities();
       toast.success(`Registro creado correctamente.`);
@@ -111,22 +100,14 @@ const GenericManager = ({
 
   const handleDelete = async (id) => {
     try {
-      console.log("Delete", `${apiConfig.delete}/${id}`);
       await axiosInstance.delete(`${apiConfig.delete}/${id}`);
       await fetchEntities();
 
       // Validar la página actual
       setEntities((prevEntities) => {
-        const totalItems = prevEntities.length;
-        const totalPages = Math.ceil(totalItems / rowsPerPage);
-
-        if (currentPage >= totalPages) {
-          setCurrentPage((prevPage) => Math.max(prevPage - 1, 0));
-        }
-
         return prevEntities;
       });
-
+      setIsDelete(true);
       toast.success(`Registro eliminado con éxito.`);
       setModalDeleteOpen(false);
     } catch (error) {
@@ -135,7 +116,6 @@ const GenericManager = ({
   };
 
   const handleView = async (id) => {
-    console.log("Viendo", id);
     try {
       const response = await axiosInstance.get(`${apiConfig.fetchOne}/${id}`);
       setEntity(response?.data?.result);
@@ -147,7 +127,7 @@ const GenericManager = ({
   const handleError = (error, defaultMessage) => {
     if (error.response && error.response.data.errors) {
       const errors = error.response.data.errors;
-      const errorMessage = generateErrorMessage(errors, fields);
+      const errorMessage = generateErrorMessage(errors);
       toast.error(errorMessage);
     } else {
       toast.error(defaultMessage);
@@ -166,7 +146,6 @@ const GenericManager = ({
   };
 
   const openCreateModal = () => {
-    console.log("Creando");
     setModalCreateOpen(true);
   };
   const closeCreateModal = () => setModalCreateOpen(false);
@@ -186,7 +165,11 @@ const GenericManager = ({
       <Box className="flewColumnCenter">
         <Box
           className="flexRowCenterEnd"
-          style={{ justifyContent: "space-between", width: "100%" }}
+          style={{
+            justifyContent: "space-between",
+            width: "100%",
+            gap: "2rem",
+          }}
         >
           <h2>{entityNamePlural}</h2>
 
@@ -209,16 +192,13 @@ const GenericManager = ({
 
         <Box className="flexColumnCenter" paddingTop="20px">
           <ContentGenericTable
-            isLoading={isLoading}
+            isReady={isReady}
+            setIsDelete={setIsDelete}
+            isDelete={isDelete}
             data={entities}
             columns={columns}
             onView={openViewModal}
             onDelete={openDeleteModal}
-            currentPage={currentPage}
-            rowsPerPage={rowsPerPage}
-            handleChangePage={handleChangePage}
-            handleChangeRowsPerPage={handleChangeRowsPerPage}
-            entityName={entityNamePlural}
           />
         </Box>
       </Box>

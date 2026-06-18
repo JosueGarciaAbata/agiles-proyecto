@@ -94,10 +94,21 @@ class LocationController extends Controller
             return response()->json(["message" => "Ubicación no encontrada"], 404);
         }
 
+
+        if ($location->assets()->exists()) {
+            return response()->json([
+                'errors' => [
+                    'reason' => ['No se puede eliminar la ubicación debido a que está asociado a al menos un activo.']
+                ]
+            ], 400);
+        }
+
+
         $location->delete();
 
         return response()->json(["message" => "Ubicación borrada con éxito"], 200);
     }
+
 
     public function search(Request $request)
     {

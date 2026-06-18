@@ -10,27 +10,22 @@ import {
   TablePagination,
   TextField,
 } from "@mui/material";
-import CustomTablePaginationActions from "../../generic/CustomTablePaginationActions";
 import tableStyles from "../../generic/styles/TableStyles";
-import { CircularProgress } from "@mui/material";
+import Loader from "../Loader";
+import GenericTable from "../GenericTable";
 
 const ContentTable = ({
   data,
-  isLoading,
+  isReady,
+  isDelete,
+  setIsDelete,
   readOnly,
   columns,
-  currentPage,
-  rowsPerPage,
-  handleChangePage,
-  handleChangeRowsPerPage,
   handleDescription,
 }) => {
-  if (isLoading) {
-    return (
-      <div style={{ textAlign: "center", marginTop: "20px" }}>
-        <CircularProgress />
-      </div>
-    );
+  if (!isReady) {
+    console.log(isReady);
+    return <Loader />;
   }
 
   if (!Array.isArray(data)) {
@@ -43,7 +38,7 @@ const ContentTable = ({
 
   if (data.length === 0) {
     return (
-      <div style={{ textAlign: "center", marginTop: "20px" }}>
+      <div style={{ textAlign: "center", marginTop: "30px", color: "#6068A5" }}>
         No se han encontrado componentes.
       </div>
     );
@@ -53,27 +48,23 @@ const ContentTable = ({
 
   return (
     <>
-      <TableContainer
-        className="table-container"
-        component={Paper}
-        sx={tableStyles.tableContainer}
+      <GenericTable
+        data={data}
+        dataCount={data.length}
+        isDelete={isDelete}
+        setIsDelete={setIsDelete}
       >
-        <Table>
-          <TableHead sx={tableStyles.tableHead}>
-            <TableRow>
-              {filteredColumn.map((column) => (
-                <TableCell key={column.key}>{column.label}</TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {data
-              .slice(
-                currentPage * rowsPerPage,
-                currentPage * rowsPerPage + rowsPerPage
-              )
-              // item -> es un componente
-              .map((item) => (
+        {(currentPageData) => (
+          <>
+            <TableHead sx={tableStyles.tableHead}>
+              <TableRow>
+                {filteredColumn.map((column) => (
+                  <TableCell key={column.key}>{column.label}</TableCell>
+                ))}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {currentPageData.map((item) => (
                 <TableRow key={item.id}>
                   {filteredColumn.map((column) => (
                     <TableCell key={column.key}>
@@ -86,7 +77,9 @@ const ContentTable = ({
                           }
                           error={item.error || false}
                           helperText={
-                            item.error ? "Este campo es obligatorio" : ""
+                            item.error
+                              ? "Este campo es obligatorio con mínimo 3 y máximo 200 caracteres"
+                              : ""
                           }
                           InputProps={{
                             readOnly: readOnly,
@@ -99,26 +92,10 @@ const ContentTable = ({
                   ))}
                 </TableRow>
               ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      <TablePagination
-        component="div"
-        count={data.length}
-        page={currentPage}
-        rowsPerPage={rowsPerPage}
-        rowsPerPageOptions={[3, 5]}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-        labelRowsPerPage={
-          <span style={tableStyles.labelRowsPerPage}>Filas por página</span>
-        }
-        labelDisplayedRows={() => ""}
-        ActionsComponent={(props) => (
-          <CustomTablePaginationActions {...props} />
+            </TableBody>
+          </>
         )}
-        sx={tableStyles.pagination}
-      />
+      </GenericTable>
     </>
   );
 };

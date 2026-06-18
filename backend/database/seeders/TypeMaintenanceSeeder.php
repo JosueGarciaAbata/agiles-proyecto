@@ -14,36 +14,32 @@ class TypeMaintenanceSeeder extends Seeder
         // Datos de los tipos de mantenimiento y sus actividades
         $tiposConActividades = [
             'Preventivo' => [
-                'Inspección periódica de sistemas o componentes.',
-                'Limpieza de hardware y sistemas.',
-                'Actualización de software con parches regulares.',
-                'Revisión de conexiones eléctricas o físicas.',
-                'Sustitución programada de piezas desgastadas.'
+                'Inspección y limpieza periódica.',
+                'Actualización de software.',
+                'Revisión de conexiones.',
+                'Reemplazo programado de piezas.'
             ],
             'Correctivo' => [
-                'Reparación de fallas detectadas en hardware o software.',
-                'Reemplazo de componentes dañados.',
-                'Restauración de sistemas a su estado funcional después de un fallo.',
-                'Solución de errores de programación o bugs en el software.'
+                'Reparación de fallos.',
+                'Sustitución de componentes dañados.',
+                'Restauración funcional tras errores.',
+                'Corrección de bugs.'
             ],
             'Predictivo' => [
-                'Monitoreo constante de desempeño (logs, sensores, diagnósticos).',
-                'Análisis de tendencias y patrones para anticipar fallos.',
-                'Implementación de herramientas de alerta temprana.',
-                'Evaluación de vibraciones, temperatura o consumo de energía en sistemas.'
+                'Monitoreo constante y análisis de tendencias.',
+                'Alertas tempranas ante posibles fallos.',
+                'Evaluación de parámetros críticos.'
             ],
             'Adaptativo' => [
-                'Modificación de software para adaptarlo a nuevos entornos o tecnologías.',
-                'Ajustes en configuraciones debido a cambios en infraestructura o hardware.',
-                'Migración de sistemas a plataformas actualizadas.',
-                'Adaptación a nuevas regulaciones o estándares.'
+                'Modificación de software para nuevos entornos.',
+                'Ajustes por cambios de infraestructura.',
+                'Migración a plataformas actualizadas.'
             ],
             'Perfectivo' => [
-                'Mejoras en el rendimiento del software o hardware.',
-                'Implementación de nuevas funcionalidades según requerimientos del usuario.',
-                'Optimización de algoritmos o procesos.',
-                'Rediseño de interfaces para mejorar la experiencia del usuario.'
-            ],
+                'Mejoras de rendimiento.',
+                'Nuevas funcionalidades según requerimientos.',
+                'Optimización de procesos e interfaces.'
+            ]
         ];
 
         // Crear tipos de mantenimiento y sus actividades

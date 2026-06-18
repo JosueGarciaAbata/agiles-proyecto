@@ -1,0 +1,468 @@
+*   [33m875e764[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mJosue[m[33m)[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[31m|[m[32m\[m  
+[31m|[m *   [33m0337e97[m[33m ([m[1;31morigin/develop[m[33m)[m Merge pull request #47 from JosueGarciaAbata/david
+[31m|[m [33m|[m[34m\[m  
+[31m|[m [33m|[m * [33m5f09a8a[m Change edit for maintenance details
+[31m|[m [33m|[m * [33m79474cf[m Set id for maintenance detail
+* [33m|[m [34m|[m [33mb906f88[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[35m|[m[33m\[m[33m|[m [34m|[m 
+[35m|[m * [34m|[m [33m8d2fc73[m Merge pull request #46 from JosueGarciaAbata/david
+[35m|[m [1;31m|[m[34m\[m[34m|[m 
+[35m|[m [1;31m|[m * [33m8906c75[m Fix creation of maintenance detail
+* [1;31m|[m [1;32m|[m [33m35435ae[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[1;33m|[m[1;31m\[m[1;31m|[m [1;32m|[m 
+[1;33m|[m * [1;32m|[m [33m516a36f[m Merge pull request #45 from JosueGarciaAbata/david
+[1;33m|[m [1;35m|[m[1;32m\[m[1;32m|[m 
+[1;33m|[m [1;35m|[m * [33m9683d6c[m Change edit maintenance detail
+[1;33m|[m [1;35m|[m * [33m6bba4f8[m Change create and update method
+* [1;35m|[m [1;36m|[m [33m5182ed0[m[33m ([m[1;31morigin/Josue[m[33m)[m Fixing some errors in maintenances
+* [1;35m|[m [1;36m|[m [33m9ee025b[m Making maintenance
+* [1;35m|[m [1;36m|[m [33m2500297[m Adding delete method in asses table for maintenances
+* [1;35m|[m [1;36m|[m [33mc0b7dc1[m Making edit of maintenances
+* [1;35m|[m [1;36m|[m [33m657a81f[m Making view for maintenances
+* [1;35m|[m [1;36m|[m [33m1611178[m Fixing styles
+* [1;35m|[m [1;36m|[m [33mf4f5f7f[m Hide and visible in maintenances
+* [1;35m|[m [1;36m|[m [33m2d4e448[m Fixing messages error
+* [1;35m|[m [1;36m|[m [33mc38047d[m Fixing styles in maintance
+* [1;35m|[m [1;36m|[m [33m684a7e9[m Fixing styles and validations
+* [1;35m|[m [1;36m|[m [33m512e0ea[m Fixing styles assets
+* [1;35m|[m [1;36m|[m [33m119b504[m Fixing styles maintance
+* [1;35m|[m [1;36m|[m [33mc744b8d[m Adding error messages to maintance
+* [1;35m|[m [1;36m|[m [33m4f30c9a[m Fixing create
+* [1;35m|[m [1;36m|[m [33m42bebf8[m Modals were created
+* [1;35m|[m [1;36m|[m [33ma0a23a7[m Fixing maintance 9:50
+* [1;35m|[m [1;36m|[m [33m22b318a[m Fixing modals in maintance
+* [1;35m|[m [1;36m|[m [33md6a3dcf[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[31m|[m[1;35m\[m[1;35m|[m [1;36m|[m 
+[31m|[m * [1;36m|[m [33m3772b45[m Merge pull request #44 from JosueGarciaAbata/david
+[31m|[m [33m|[m[1;36m\[m[1;36m|[m 
+[31m|[m [33m|[m * [33mbb52215[m Edit MaintenanceDetailController
+* [33m|[m [34m|[m [33m2b98b28[m Fixing create, maintance
+* [33m|[m [34m|[m [33m7e968b9[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[35m|[m[33m\[m[33m|[m [34m|[m 
+[35m|[m * [34m|[m [33m07d725f[m Merge pull request #43 from JosueGarciaAbata/david
+[35m|[m [1;31m|[m[34m\[m[34m|[m 
+[35m|[m [1;31m|[m * [33m18022de[m Fix maintenances migration
+[35m|[m * [1;32m|[m [33m83d9691[m Merge pull request #41 from JosueGarciaAbata/david
+[35m|[m [1;33m|[m[1;32m\[m[1;32m|[m 
+[35m|[m [1;33m|[m * [33madaa76f[m Fix maintenance api
+[35m|[m [1;33m|[m *   [33m50103a8[m Bringing changes from josue branch
+[35m|[m [1;33m|[m [1;35m|[m[1;36m\[m  
+[35m|[m [1;33m|[m * [1;36m|[m [33m485c242[m Add Replaced Component api
+[35m|[m [1;33m|[m * [1;36m|[m [33mce0fe33[m Add Activities api
+[35m|[m [1;33m|[m * [1;36m|[m [33m233691c[m Add observations api routes
+[35m|[m [1;33m|[m * [1;36m|[m [33m03e2d36[m Add observation Controiller
+* [1;33m|[m [1;36m|[m [1;36m|[m [33m63f9fc0[m Making maintances
+[1;33m|[m[1;33m/[m [1;36m/[m [1;36m/[m  
+* [1;36m|[m [1;36m|[m   [33mae4d1e5[m Merge pull request #40 from JosueGarciaAbata/Josue
+[31m|[m[32m\[m [1;36m\[m [1;36m\[m  
+[31m|[m * [1;36m\[m [1;36m\[m   [33mf397aed[m Fixing filters with rol
+[31m|[m [33m|[m[31m\[m [1;36m\[m [1;36m\[m  
+[31m|[m [33m|[m[31m/[m [1;36m/[m [1;36m/[m  
+[31m|[m[31m/[m[33m|[m [1;36m|[m [1;36m|[m   
+* [33m|[m [1;36m|[m [1;36m|[m   [33m33c68b2[m Merge pull request #39 from JosueGarciaAbata/Joel
+[1;36m|[m[36m\[m [33m\[m [1;36m\[m [1;36m\[m  
+[1;36m|[m [36m|[m[1;36m_[m[33m|[m[1;36m_[m[1;36m|[m[1;36m/[m  
+[1;36m|[m[1;36m/[m[36m|[m [33m|[m [1;36m|[m   
+[1;36m|[m * [33m|[m [1;36m|[m   [33m847f33a[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into Joel
+[1;36m|[m [1;31m|[m[1;36m\[m [33m\[m [1;36m\[m  
+[1;36m|[m [1;31m|[m[1;36m/[m [33m/[m [1;36m/[m  
+[1;36m|[m[1;36m/[m[1;31m|[m [33m|[m [1;36m|[m   
+[1;36m|[m * [33m|[m [1;36m|[m [33m17ea430[m Adding validations on show, store and asset update
+[1;36m|[m [1;32m|[m * [1;36m|[m [33m4de6fa6[m Filters for assets
+[1;36m|[m [1;32m|[m * [1;36m|[m [33m1f35ec3[m Adding helper text when the admin passes on the icons of hide and visible
+[1;36m|[m [1;32m|[m * [1;36m|[m   [33m3c2453d[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[1;36m|[m [1;32m|[m [1;33m|[m[1;36m\[m [1;36m\[m  
+[1;36m|[m [1;32m|[m[1;36m_[m[1;33m|[m[1;36m/[m [1;36m/[m  
+[1;36m|[m[1;36m/[m[1;32m|[m [1;33m|[m [1;36m|[m   
+* [1;32m|[m [1;33m|[m [1;36m|[m   [33m68f46b6[m Merge pull request #38 from JosueGarciaAbata/Josue
+[1;36m|[m[1;36m\[m [1;32m\[m [1;33m\[m [1;36m\[m  
+[1;36m|[m [1;36m|[m[1;36m_[m[1;32m|[m[1;36m_[m[1;33m|[m[1;36m/[m  
+[1;36m|[m[1;36m/[m[1;36m|[m [1;32m|[m [1;33m|[m   
+[1;36m|[m [1;36m|[m [1;32m|[m * [33m9c8f45a[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[1;36m|[m [1;36m|[m [1;32m|[m[1;36m/[m[1;36m|[m 
+[1;36m|[m [1;36m|[m[1;36m/[m[1;32m|[m[1;36m/[m  
+[1;36m|[m [1;36m|[m[1;36m/[m[1;32m|[m   
+[1;36m|[m[1;36m/[m[1;36m|[m [1;32m|[m   
+* [1;36m|[m [1;32m|[m [33m49fd978[m Fix replaced components migration
+* [1;36m|[m [1;32m|[m [33m5d3988f[m Edit migrations
+* [1;36m|[m [1;32m|[m   [33ma0543f3[m Check for migrations changes
+[33m|[m[34m\[m [1;36m\[m [1;32m\[m  
+[33m|[m * [1;36m\[m [1;32m\[m   [33m6be1e96[m Merge pull request #37 from JosueGarciaAbata/Josue
+[33m|[m [35m|[m[36m\[m [1;36m\[m [1;32m\[m  
+* [35m|[m [36m\[m [1;36m\[m [1;32m\[m   [33m5ac666a[m Join current develop to david
+[1;31m|[m[1;32m\[m [35m\[m [36m\[m [1;36m\[m [1;32m\[m  
+[1;31m|[m [1;32m|[m [35m|[m [36m|[m * [1;32m|[m [33m7765580[m The hide feature for active items works well
+[1;31m|[m [1;32m|[m [35m|[m [36m|[m[36m/[m [1;32m/[m  
+[1;31m|[m [1;32m|[m [35m|[m * [1;32m|[m [33m66adaf5[m Changig
+[1;31m|[m [1;32m|[m [35m|[m * [1;32m|[m [33m5afcef6[m Adding searchs to assets
+[1;31m|[m [1;32m|[m [35m|[m * [1;32m|[m [33meda93e9[m Update and create of asstes are working now
+[1;31m|[m [1;32m|[m [35m|[m * [1;32m|[m   [33mb72c775[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[1;31m|[m [1;32m|[m [35m|[m [1;33m|[m[35m\[m [1;32m\[m  
+[1;31m|[m [1;32m|[m [35m|[m [1;33m|[m[35m/[m [1;32m/[m  
+[1;31m|[m [1;32m|[m [35m|[m[35m/[m[1;33m|[m [1;32m|[m   
+[1;31m|[m [1;32m|[m * [1;33m|[m [1;32m|[m   [33mebf88ae[m Merge pull request #36 from JosueGarciaAbata/Joel
+[1;31m|[m [1;32m|[m [1;35m|[m[1;32m\[m [1;33m\[m [1;32m\[m  
+[1;31m|[m [1;32m|[m [1;35m|[m [1;32m|[m [1;33m|[m[1;32m/[m  
+[1;31m|[m [1;32m|[m [1;35m|[m [1;32m|[m[1;32m/[m[1;33m|[m   
+[1;31m|[m [1;32m|[m [1;35m|[m * [1;33m|[m [33m0c972b9[m Fixing assets/incomes/create
+[1;31m|[m [1;32m|[m [1;35m|[m [1;36m|[m * [33m1ae5f8c[m Works good too
+[1;31m|[m [1;32m|[m [1;35m|[m [1;36m|[m *   [33m23544de[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[1;31m|[m [1;32m|[m [1;35m|[m [1;36m|[m [31m|[m[1;35m\[m  
+[1;31m|[m [1;32m|[m [1;35m|[m [1;36m|[m[1;35m_[m[31m|[m[1;35m/[m  
+[1;31m|[m [1;32m|[m [1;35m|[m[1;35m/[m[1;36m|[m [31m|[m   
+[1;31m|[m [1;32m|[m * [1;36m|[m [31m|[m [33m86766ad[m Merge pull request #35 from JosueGarciaAbata/Joel
+[1;31m|[m [1;32m|[m [33m|[m[1;36m\[m[1;36m|[m [31m|[m 
+[1;31m|[m [1;32m|[m [33m|[m * [31m|[m [33mf19e792[m Fixing assets/incomes
+[1;31m|[m [1;32m|[m [33m|[m [34m|[m * [33m0017d2a[m Works good!
+[1;31m|[m [1;32m|[m [33m|[m [34m|[m *   [33m43fb0fe[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[1;31m|[m [1;32m|[m [33m|[m [34m|[m [35m|[m[33m\[m  
+[1;31m|[m [1;32m|[m [33m|[m [34m|[m[33m_[m[35m|[m[33m/[m  
+[1;31m|[m [1;32m|[m [33m|[m[33m/[m[34m|[m [35m|[m   
+[1;31m|[m [1;32m|[m * [34m|[m [35m|[m [33m6d30e71[m Merge pull request #34 from JosueGarciaAbata/Joel
+[1;31m|[m [1;32m|[m [1;31m|[m[34m\[m[34m|[m [35m|[m 
+[1;31m|[m [1;32m|[m [1;31m|[m * [35m|[m [33mb6c77a6[m Adding cumulative filters, searching by serial number on assets
+[1;31m|[m [1;32m|[m [1;31m|[m [1;32m|[m * [33m0ece25f[m It's working good
+[1;31m|[m [1;32m|[m [1;31m|[m [1;32m|[m *   [33mb804e46[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[1;31m|[m [1;32m|[m [1;31m|[m [1;32m|[m [1;33m|[m[1;31m\[m  
+[1;31m|[m [1;32m|[m [1;31m|[m [1;32m|[m[1;31m_[m[1;33m|[m[1;31m/[m  
+[1;31m|[m [1;32m|[m [1;31m|[m[1;31m/[m[1;32m|[m [1;33m|[m   
+[1;31m|[m [1;32m|[m * [1;32m|[m [1;33m|[m [33ma18e0c6[m Merge pull request #33 from JosueGarciaAbata/Joel
+[1;31m|[m [1;32m|[m [1;35m|[m[1;32m\[m[1;32m|[m [1;33m|[m 
+[1;31m|[m [1;32m|[m [1;35m|[m * [1;33m|[m [33ma61a661[m Fixing index asset
+[1;31m|[m [1;32m|[m * [1;36m|[m [1;33m|[m [33m1a1bf5b[m Merge pull request #32 from JosueGarciaAbata/Joel
+[1;31m|[m [1;32m|[m [31m|[m[1;36m\[m[1;36m|[m [1;33m|[m 
+[1;31m|[m [1;32m|[m [31m|[m * [1;33m|[m [33mb859a1b[m .
+[1;31m|[m [1;32m|[m [31m|[m [32m|[m *   [33mb01bb95[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[1;31m|[m [1;32m|[m [31m|[m [32m|[m [33m|[m[31m\[m  
+[1;31m|[m [1;32m|[m [31m|[m [32m|[m[31m_[m[33m|[m[31m/[m  
+[1;31m|[m [1;32m|[m [31m|[m[31m/[m[32m|[m [33m|[m   
+[1;31m|[m [1;32m|[m * [32m|[m [33m|[m [33mbb66e91[m Merge pull request #31 from JosueGarciaAbata/Joel
+[1;31m|[m [1;32m|[m [35m|[m[32m\[m[32m|[m [33m|[m 
+[1;31m|[m [1;32m|[m [35m|[m * [33m|[m [33m110cbff[m Adding methods to update, hide, view and update index method in the assets section.
+[1;31m|[m [1;32m|[m [35m|[m[35m/[m [33m/[m  
+[1;31m|[m [1;32m|[m * [33m|[m   [33m986a98e[m Merge pull request #30 from JosueGarciaAbata/Josue
+[1;31m|[m [1;32m|[m [1;31m|[m[1;32m\[m [33m\[m  
+[1;31m|[m [1;32m|[m [1;31m|[m [1;32m|[m * [33mae49f77[m Doing edit of assets
+[1;31m|[m [1;32m|[m [1;31m|[m [1;32m|[m[1;32m/[m  
+[1;31m|[m [1;32m|[m [1;31m|[m * [33m3442028[m Resposibles are working now
+[1;31m|[m [1;32m|[m [1;31m|[m *   [33me73d7aa[m Fixing merge
+[1;31m|[m [1;32m|[m [1;31m|[m [1;33m|[m[1;31m\[m  
+[1;31m|[m [1;32m|[m [1;31m|[m [1;33m|[m[1;31m/[m  
+[1;31m|[m [1;32m|[m [1;31m|[m[1;31m/[m[1;33m|[m   
+[1;31m|[m [1;32m|[m * [1;33m|[m [33m175e544[m Merge pull request #29 from JosueGarciaAbata/david
+[1;31m|[m [1;32m|[m[1;32m/[m[1;31m|[m [1;33m|[m 
+[1;31m|[m [1;32m|[m[1;31m/[m [1;33m/[m  
+[1;31m|[m[1;31m/[m[1;32m|[m [1;33m|[m   
+* [1;32m|[m [1;33m|[m [33m8bc1d0d[m Edit responsibles api
+* [1;32m|[m [1;33m|[m [33m0184cfa[m Add types and activities for maintenances
+* [1;32m|[m [1;33m|[m [33m185f995[m Add maintenances
+[1;36m|[m [1;32m|[m * [33m48eca20[m Doing edit of assets
+[1;36m|[m [1;32m|[m * [33mb6c1257[m It's working good, but for me no
+[1;36m|[m [1;32m|[m * [33m2914dff[m Show of assets is working now
+[1;36m|[m [1;32m|[m * [33m5e962e8[m Fixing responsibles
+[1;36m|[m [1;32m|[m * [33m808ddf0[m Create of assets is working now
+[1;36m|[m [1;32m|[m *   [33md484c77[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[1;36m|[m [1;32m|[m [31m|[m[1;32m\[m  
+[1;36m|[m [1;32m|[m [31m|[m[1;32m/[m  
+[1;36m|[m [1;32m|[m[1;32m/[m[31m|[m   
+[1;36m|[m * [31m|[m   [33m636a23a[m Merge pull request #28 from JosueGarciaAbata/david
+[1;36m|[m [33m|[m[1;36m\[m [31m\[m  
+[1;36m|[m [33m|[m[1;36m/[m [31m/[m  
+[1;36m|[m[1;36m/[m[33m|[m [31m|[m   
+* [33m|[m [31m|[m   [33mca58fbc[m Add last changes
+[35m|[m[36m\[m [33m\[m [31m\[m  
+[35m|[m * [33m|[m [31m|[m [33m51237d6[m extra content
+[35m|[m * [33m|[m [31m|[m [33m4953f3b[m Add responsible migration
+* [36m|[m [33m|[m [31m|[m   [33m850ff9e[m Join actives to responsibles
+[1;31m|[m[33m\[m [36m\[m [33m\[m [31m\[m  
+[1;31m|[m [33m|[m [36m|[m[33m/[m [31m/[m  
+[1;31m|[m [33m|[m[33m/[m[36m|[m [31m|[m   
+[1;31m|[m * [36m|[m [31m|[m   [33m3787adb[m Merge pull request #27 from JosueGarciaAbata/Joel
+[1;31m|[m [1;33m|[m[1;34m\[m [36m\[m [31m\[m  
+[1;31m|[m [1;33m|[m * [36m|[m [31m|[m [33m5f01953[m Arreglo observacion borrado1
+* [1;33m|[m [1;34m|[m [36m|[m [31m|[m [33m3b73acb[m Add api by responsibles
+* [1;33m|[m [1;34m|[m [36m|[m [31m|[m   [33m6aab1bc[m Uniendo mantenimientos-joe
+[1;35m|[m[1;36m\[m [1;33m\[m [1;34m\[m [36m\[m [31m\[m  
+* [1;36m\[m [1;33m\[m [1;34m\[m [36m\[m [31m\[m   [33mfaf3a0c[m Merge develop with my current version
+[31m|[m[32m\[m [1;36m\[m [1;33m\[m [1;34m\[m [36m\[m [31m\[m  
+* [32m|[m [1;36m|[m [1;33m|[m [1;34m|[m [36m|[m [31m|[m [33m2ce92a9[m Edit php dependences
+[32m|[m [32m|[m [1;36m|[m [1;33m|[m [1;34m|[m [36m|[m *   [33m46bdf1d[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[32m|[m [32m|[m [1;36m|[m [1;33m|[m [1;34m|[m [36m|[m [33m|[m[1;33m\[m  
+[32m|[m [32m|[m [1;36m|[m [1;33m|[m [1;34m|[m[1;33m_[m[36m|[m[1;33m_[m[33m|[m[1;33m/[m  
+[32m|[m [32m|[m [1;36m|[m [1;33m|[m[1;33m/[m[1;34m|[m [36m|[m [33m|[m   
+[32m|[m [32m|[m [1;36m|[m * [1;34m|[m [36m|[m [33m|[m [33mee91258[m Merge pull request #26 from JosueGarciaAbata/Joel
+[32m|[m [32m|[m [1;36m|[m [35m|[m[1;34m\[m[1;34m|[m [36m|[m [33m|[m 
+[32m|[m [32m|[m [1;36m|[m [35m|[m * [36m|[m [33m|[m [33m384ee67[m arreglo de envio de datos de dispositivos front
+[32m|[m [32m|[m [1;36m|[m [35m|[m [36m|[m [36m|[m * [33mfc5bd77[m Doing assets
+[32m|[m [32m|[m [1;36m|[m [35m|[m [36m|[m[35m_[m[36m|[m[35m/[m  
+[32m|[m [32m|[m [1;36m|[m [35m|[m[35m/[m[36m|[m [36m|[m   
+[32m|[m [32m|[m [1;36m|[m * [36m|[m [36m|[m [33m133ebe5[m Merge pull request #25 from JosueGarciaAbata/Joel
+[32m|[m [32m|[m [1;36m|[m [1;31m|[m[36m\[m[36m|[m [36m|[m 
+[32m|[m [32m|[m [1;36m|[m [1;31m|[m * [36m|[m [33m8282f6d[m Arreglo observacion borrado
+[32m|[m [32m|[m [1;36m|[m * [1;32m|[m [36m|[m [33mb17b7ae[m Merge pull request #24 from JosueGarciaAbata/Joel
+[32m|[m [32m|[m [1;36m|[m[1;36m/[m[1;32m|[m [1;32m|[m [36m|[m 
+[32m|[m [32m|[m [1;36m|[m [1;32m|[m[1;32m/[m [36m/[m  
+[32m|[m [32m|[m [1;36m|[m * [36m/[m [33m4575f7b[m Creación del request de activos, y creación de métodos index,store,show
+[32m|[m [32m|[m [1;36m|[m[1;36m/[m [36m/[m  
+[32m|[m [32m|[m * [36m|[m [33md3486d2[m Merge pull request #23 from JosueGarciaAbata/Josue
+[32m|[m [32m|[m[32m/[m[1;36m|[m [36m|[m 
+[32m|[m [32m|[m * [36m|[m [33ma319e78[m Incomes are working now
+[32m|[m [32m|[m * [36m|[m [33m9b19f26[m Fixing delete incomes2
+[32m|[m [32m|[m * [36m|[m   [33m268c92a[m Incomes fixing
+[32m|[m [32m|[m [31m|[m[32m\[m [36m\[m  
+[32m|[m [32m|[m [31m|[m[32m/[m [36m/[m  
+[32m|[m [32m|[m[32m/[m[31m|[m [36m|[m   
+[32m|[m * [31m|[m [36m|[m [33m8e92af3[m Merge pull request #22 from JosueGarciaAbata/Joel
+[32m|[m[32m/[m[34m|[m [31m|[m [36m|[m 
+[32m|[m * [31m|[m [36m|[m [33m0175bfa[m Añadiendo endpoint ingresso
+[32m|[m * [31m|[m [36m|[m [33mea37a21[m Creacion o modificacion de tablas de categorias,componentes y tabla intermedia, configuracion de endpoint traer categorias y compoenntes de una categoria
+[32m|[m[32m/[m [31m/[m [36m/[m  
+[32m|[m * [36m|[m [33m2bd625a[m To income
+[32m|[m * [36m|[m [33m4c44dc6[m Validation for users
+[32m|[m[32m/[m [36m/[m  
+* [36m|[m   [33m308a69d[m Merge pull request #21 from JosueGarciaAbata/Josue
+[36m|[m[36m\[m [36m\[m  
+[36m|[m [36m|[m[36m/[m  
+[36m|[m[36m/[m[36m|[m   
+[36m|[m * [33m407ee8c[m Changes
+[36m|[m[36m/[m  
+* [33m3f92923[m Change update method for users
+* [33mc538598[m Add User seeder
+*   [33ma3e02f5[m Merge pull request #20 from JosueGarciaAbata/Josue
+[1;31m|[m[1;32m\[m  
+[1;31m|[m * [33m80e1b92[m Update
+[1;31m|[m * [33mb2cd663[m Users v2
+[1;31m|[m *   [33m821c327[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[1;31m|[m [1;33m|[m[1;31m\[m  
+[1;31m|[m [1;33m|[m[1;31m/[m  
+[1;31m|[m[1;31m/[m[1;33m|[m   
+* [1;33m|[m [33m956cbe5[m Add user module
+* [1;33m|[m   [33m28427b1[m Joining previous david branch at the current
+[1;35m|[m[1;36m\[m [1;33m\[m  
+[1;35m|[m * [1;33m|[m [33mf71709f[m[33m ([m[1;31morigin/david[m[33m)[m Add ComponentController
+[1;35m|[m * [1;33m|[m   [33mc30b6af[m Recover changes in david branch
+[1;35m|[m [31m|[m[32m\[m [1;33m\[m  
+* [31m|[m [32m|[m [1;33m|[m [33m9bd6399[m Add user controller
+* [31m|[m [32m|[m [1;33m|[m   [33mdf9faf6[m Joining my branch to that of develop
+[32m|[m[34m\[m [31m\[m [32m\[m [1;33m\[m  
+[32m|[m [34m|[m[32m_[m[31m|[m[32m/[m [1;33m/[m  
+[32m|[m[32m/[m[34m|[m [31m|[m [1;33m|[m   
+* [34m|[m [31m|[m [1;33m|[m [33m45f0dd1[m Add table maintenances, assets, active components, and it's relations
+[34m|[m [34m|[m [31m|[m * [33mb24c43f[m Adding the module user
+[34m|[m [34m|[m [31m|[m *   [33m78ea43b[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[34m|[m [34m|[m [31m|[m [35m|[m[34m\[m  
+[34m|[m [34m|[m [31m|[m[34m_[m[35m|[m[34m/[m  
+[34m|[m [34m|[m[34m/[m[31m|[m [35m|[m   
+[34m|[m * [31m|[m [35m|[m   [33mfe8f8da[m Merge pull request #19 from JosueGarciaAbata/Josue
+[34m|[m [1;31m|[m[1;32m\[m [31m\[m [35m\[m  
+[34m|[m [1;31m|[m [1;32m|[m [31m|[m * [33m13e0d0e[m Login is working noW2
+[34m|[m [1;31m|[m [1;32m|[m [31m|[m * [33m52ccdcb[m Login and logout are working now
+[34m|[m [1;31m|[m [1;32m|[m [31m|[m[1;32m/[m  
+[34m|[m [1;31m|[m [1;32m|[m[1;32m/[m[31m|[m   
+[34m|[m [1;31m|[m * [31m|[m [33ma6871eb[m Fixing
+[34m|[m [1;31m|[m * [31m|[m [33m02ed152[m Inforamtion
+[34m|[m [1;31m|[m * [31m|[m [33m9eb6e31[m Fixing
+[34m|[m [1;31m|[m * [31m|[m [33mfc5aa6c[m Removing some things
+[34m|[m [1;31m|[m * [31m|[m [33m491a950[m Fixing some messages
+[34m|[m [1;31m|[m * [31m|[m   [33m4d64559[m[33m ([m[1;33mtag: [m[1;33mv1.0.1[m[33m)[m Merge branch 'Joel2' of github.com:JosueGarciaAbata/agiles-proyecto into HEAD
+[34m|[m [1;31m|[m [1;33m|[m[1;34m\[m [31m\[m  
+[34m|[m [1;31m|[m [1;33m|[m * [31m|[m [33m1911cef[m[33m ([m[1;31morigin/Joel2[m[33m)[m Fixing Errors Data
+[34m|[m [1;31m|[m [1;33m|[m [1;34m|[m [31m|[m * [33ma7a084e[m[33m ([m[1;32mdevelop[m[33m)[m Fixing somethings
+[34m|[m [1;31m|[m [1;33m|[m[1;31m_[m[1;34m|[m[1;31m_[m[31m|[m[1;31m/[m  
+[34m|[m [1;31m|[m[1;31m/[m[1;33m|[m [1;34m|[m [31m|[m   
+[34m|[m * [1;33m|[m [1;34m|[m [31m|[m [33m85f2765[m Merge pull request #18 from JosueGarciaAbata/Josue
+[34m|[m [1;36m|[m[1;33m\[m[1;33m|[m [1;34m|[m [31m|[m 
+[34m|[m [1;36m|[m * [1;34m|[m [31m|[m [33m31910da[m Login and Jwt
+[34m|[m [1;36m|[m * [1;34m|[m [31m|[m [33mbe72799[m Merge branch 'Joel2' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[34m|[m [1;36m|[m [32m|[m[1;34m\[m[1;34m|[m [31m|[m 
+[34m|[m [1;36m|[m [32m|[m * [31m|[m [33mb149126[m Cambiando post search categories
+[34m|[m [1;36m|[m [32m|[m * [31m|[m [33m031bf6a[m Solucionar errores search suppliers y locations
+[34m|[m [1;36m|[m [32m|[m [31m|[m[31m/[m  
+[34m|[m [1;36m|[m [32m|[m * [33m51e71a1[m Fix search method in suppliers
+[34m|[m [1;36m|[m[34m_[m[32m|[m[34m/[m  
+[34m|[m[34m/[m[1;36m|[m [32m|[m   
+* [1;36m|[m [32m|[m [33mc6b248d[m Change error messages
+* [1;36m|[m [32m|[m   [33m370a38b[m Merging branch Joel2 to david
+[1;36m|[m[35m\[m [1;36m\[m [32m\[m  
+[1;36m|[m [35m|[m[1;36m/[m [32m/[m  
+[1;36m|[m[1;36m/[m[35m|[m [32m|[m   
+* [35m|[m [32m|[m [33m9a4b3d2[m Fix login/register errors
+* [35m|[m [32m|[m   [33m9d3aae4[m Changing content route
+[36m|[m[1;31m\[m [35m\[m [32m\[m  
+[36m|[m * [35m|[m [32m|[m [33m808c370[m Adding register & login component
+* [1;31m|[m [35m|[m [32m|[m [33mfcfe85d[m Prev Changes
+[1;31m|[m[1;31m/[m [35m/[m [32m/[m  
+[1;31m|[m [35m|[m * [33m2bd62dd[m[33m ([m[1;33mtag: [m[1;33mv1.0.0-alpha[m[33m)[m The modules suppliers, locations and categories were enhanced
+[1;31m|[m [35m|[m * [33m0f591fb[m Messages for errors were added
+[1;31m|[m [35m|[m *   [33m9517c41[m Merge branch 'Joel2' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[1;31m|[m [35m|[m [1;32m|[m[35m\[m  
+[1;31m|[m [35m|[m [1;32m|[m[35m/[m  
+[1;31m|[m [35m|[m[35m/[m[1;32m|[m   
+[1;31m|[m * [1;32m|[m [33m02d6c56[m Añadiendo mensajes de errores cateogrias localizaciones
+[1;31m|[m * [1;32m|[m [33mf746cc3[m Añadiendo cedula a proovedores y actualizando como unique al telefono, arreglar validacion de proovedor
+[1;31m|[m * [1;32m|[m   [33mb8649a6[m Fusion con merge 11/12/2024
+[1;31m|[m [1;34m|[m[1;31m\[m [1;32m\[m  
+[1;31m|[m [1;34m|[m[1;31m/[m [1;32m/[m  
+[1;31m|[m[1;31m/[m[1;34m|[m [1;32m|[m   
+* [1;34m|[m [1;32m|[m   [33m5fcf3e3[m Merge pull request #17 from JosueGarciaAbata/Josue
+[1;36m|[m[31m\[m [1;34m\[m [1;32m\[m  
+[1;36m|[m [31m|[m [1;34m|[m * [33mcad2d6f[m Nothing
+[1;36m|[m [31m|[m [1;34m|[m * [33m1c0903f[m GenericManager Search  was added
+[1;36m|[m [31m|[m [1;34m|[m[31m/[m[1;34m|[m 
+[1;36m|[m [31m|[m[31m/[m[1;34m|[m[1;34m/[m  
+[1;36m|[m [31m|[m * [33m31bfee9[m Añadiendo busquedas
+[1;36m|[m [31m|[m[1;36m/[m  
+[1;36m|[m[1;36m/[m[31m|[m   
+* [31m|[m   [33m495c79b[m Merge pull request #16 from JosueGarciaAbata/Josue
+[34m|[m[35m\[m [31m\[m  
+* [35m\[m [31m\[m   [33m443011c[m Merge pull request #15 from JosueGarciaAbata/Josue
+[36m|[m[1;31m\[m [35m\[m [31m\[m  
+* [1;31m\[m [35m\[m [31m\[m   [33m9634562[m Merge pull request #14 from JosueGarciaAbata/Josue
+[1;32m|[m[1;33m\[m [1;31m\[m [35m\[m [31m\[m  
+* [1;33m\[m [1;31m\[m [35m\[m [31m\[m   [33m9dd82d8[m Merge pull request #13 from JosueGarciaAbata/Josue
+[1;34m|[m[1;35m\[m [1;33m\[m [1;31m\[m [35m\[m [31m\[m  
+* [1;35m\[m [1;33m\[m [1;31m\[m [35m\[m [31m\[m   [33me487ed5[m Merge pull request #12 from JosueGarciaAbata/Josue
+[1;36m|[m[31m\[m [1;35m\[m [1;33m\[m [1;31m\[m [35m\[m [31m\[m  
+* [31m\[m [1;35m\[m [1;33m\[m [1;31m\[m [35m\[m [31m\[m   [33mb27a532[m Merge pull request #11 from JosueGarciaAbata/Josue
+[32m|[m[33m\[m [31m\[m [1;35m\[m [1;33m\[m [1;31m\[m [35m\[m [31m\[m  
+[32m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m [1;31m|[m [35m|[m * [33mec4ec01[m Sorting anothers things
+[32m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m [1;31m|[m [35m|[m * [33m3007868[m Sorting the files
+[32m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m [1;31m|[m [35m|[m[35m/[m  
+[32m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m [1;31m|[m * [33mf964aff[m Adding a valigation for suppliers
+[32m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m [1;31m|[m * [33m6fa0523[m Automated module generation
+[32m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m [1;31m|[m[1;31m/[m  
+[32m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m * [33m976470c[m Fixing width table
+[32m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m * [33mfb1e26a[m Merge branch 'david' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[32m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m[1;33m/[m[35m|[m 
+[32m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m * [33mb71239b[m Adding locations module
+[32m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m * [33m7983421[m Setting layout
+[32m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m * [33me8ba9b1[m Adding pages layout
+[32m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m *   [33mc53c4f1[m Changing save function from categories
+[32m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m [36m|[m[32m\[m  
+[32m|[m [33m|[m[32m_[m[31m|[m[32m_[m[1;35m|[m[32m_[m[1;33m|[m[32m_[m[36m|[m[32m/[m  
+[32m|[m[32m/[m[33m|[m [31m|[m [1;35m|[m [1;33m|[m [36m|[m   
+* [33m|[m [31m|[m [1;35m|[m [1;33m|[m [36m|[m   [33me98b434[m Merge pull request #10 from JosueGarciaAbata/Josue
+[1;32m|[m[1;33m\[m [33m\[m [31m\[m [1;35m\[m [1;33m\[m [36m\[m  
+[1;32m|[m [1;33m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m *   [33m60ff5b0[m Updating Repository(Deleting innecesary folder)
+[1;32m|[m [1;33m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m [1;34m|[m[1;32m\[m  
+[1;32m|[m [1;33m|[m[1;32m_[m[33m|[m[1;32m_[m[31m|[m[1;32m_[m[1;35m|[m[1;32m_[m[1;33m|[m[1;32m_[m[1;34m|[m[1;32m/[m  
+[1;32m|[m[1;32m/[m[1;33m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m [1;34m|[m   
+* [1;33m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m [1;34m|[m   [33mc85bacf[m Merge pull request #9 from JosueGarciaAbata/Josue
+[1;36m|[m[31m\[m [1;33m\[m [33m\[m [31m\[m [1;35m\[m [1;33m\[m [1;34m\[m  
+* [31m|[m [1;33m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m [1;34m|[m [33mdfc3451[m Deleting Folder
+[31m|[m [31m|[m [1;33m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m * [33m86cb41c[m Eliminando carpeta Mantenimientos
+[31m|[m [31m|[m[31m_[m[1;33m|[m[31m_[m[33m|[m[31m_[m[31m|[m[31m_[m[1;35m|[m[31m_[m[1;33m|[m[31m/[m  
+[31m|[m[31m/[m[31m|[m [1;33m|[m [33m|[m [31m|[m [1;35m|[m [1;33m|[m   
+[31m|[m [31m|[m [1;33m|[m [33m|[m [31m|[m [1;35m|[m * [33m36d3b5c[m Fixing a style
+[31m|[m [31m|[m [1;33m|[m [33m|[m [31m|[m [1;35m|[m * [33m836d5ab[m Adding styles
+[31m|[m [31m|[m [1;33m|[m [33m|[m [31m|[m [1;35m|[m * [33m29f6c3e[m Adding styles to the table
+[31m|[m [31m|[m [1;33m|[m [33m|[m [31m|[m [1;35m|[m * [33m2999245[m The module categories is working now
+[31m|[m [31m|[m [1;33m|[m [33m|[m [31m|[m [1;35m|[m[1;35m/[m  
+[31m|[m [31m|[m [1;33m|[m [33m|[m [31m|[m * [33m7d652ea[m The module of categories of dispositives  is done
+[31m|[m [31m|[m [1;33m|[m [33m|[m [31m|[m * [33m31456a5[m Adding error messages in CreateModal
+[31m|[m [31m|[m [1;33m|[m [33m|[m [31m|[m[31m/[m  
+[31m|[m [31m|[m [1;33m|[m [33m|[m * [33ma49d93a[m Fixing a error
+[31m|[m [31m|[m [1;33m|[m [33m|[m[33m/[m  
+[31m|[m [31m|[m [1;33m|[m * [33m0868a07[m I deleted a innecessary file
+[31m|[m [31m|[m [1;33m|[m * [33mf5ca463[m I added a modal before deleting a category
+[31m|[m [31m|[m [1;33m|[m[1;33m/[m  
+[31m|[m [31m|[m * [33m41083a0[m Fixing close modal in categories
+[31m|[m [31m|[m[31m/[m  
+[31m|[m *   [33m93677d9[m Fixing merge v2
+[31m|[m [32m|[m[31m\[m  
+[31m|[m [32m|[m[31m/[m  
+[31m|[m[31m/[m[32m|[m   
+* [32m|[m [33md12c63a[m Query to suppliers stored
+[33m|[m *   [33m47b2de0[m Fixing merge
+[33m|[m [34m|[m[33m\[m  
+[33m|[m [34m|[m[33m/[m  
+[33m|[m[33m/[m[34m|[m   
+* [34m|[m   [33m497e42a[m Replace styles
+[36m|[m[1;31m\[m [34m\[m  
+[36m|[m * [34m\[m   [33mfb06c09[m[33m ([m[1;31morigin/Joel[m[33m)[m Conflictos solucionados
+[36m|[m [1;32m|[m[1;33m\[m [34m\[m  
+[36m|[m * [1;33m|[m [34m|[m [33m610499b[m Estructura de colores de fondo listo
+* [1;33m|[m [1;33m|[m [34m|[m [33m2e108ea[m Changing icon styles
+* [1;33m|[m [1;33m|[m [34m|[m [33m1bc2cf0[m after changes
+[1;33m|[m [1;33m|[m[1;33m/[m [34m/[m  
+[1;33m|[m[1;33m/[m[1;33m|[m [34m|[m   
+* [1;33m|[m [34m|[m [33m1a939a6[m Adding Suppliers Page
+[1;34m|[m[1;33m\[m[1;33m|[m [34m|[m 
+[1;34m|[m * [34m|[m [33ma43583e[m Arreglando  nav
+* [1;35m|[m [34m|[m [33mef748fb[m Adding Suppliers Page
+[1;36m|[m[1;35m\[m[1;35m|[m [34m|[m 
+[1;36m|[m * [34m|[m   [33ma01ac84[m Merge pull request #8 from JosueGarciaAbata/Josue
+[1;36m|[m [32m|[m[33m\[m [34m\[m  
+* [32m|[m [33m|[m [34m|[m [33m995fb4f[m Adding Supplier page
+* [32m|[m [33m|[m [34m|[m [33mb1c6d82[m Adding Supplier page
+[32m|[m[32m/[m [33m/[m [34m/[m  
+[32m|[m [33m|[m * [33me1468df[m Category with pagination
+[32m|[m [33m|[m * [33m7683155[m Add, delete and show for every category were added
+[32m|[m [33m|[m[33m/[m  
+[32m|[m * [33m4237e3f[m Dashboard is working now
+[32m|[m *   [33m8e348ae[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into Josue
+[32m|[m [34m|[m[32m\[m  
+[32m|[m [34m|[m[32m/[m  
+[32m|[m[32m/[m[34m|[m   
+* [34m|[m   [33m67f4bdb[m Segmentacion nav
+[36m|[m[1;31m\[m [34m\[m  
+* [1;31m|[m [34m|[m [33mae8e3a4[m Cambiando nav
+[1;31m|[m [1;31m|[m *   [33md9d2cfe[m Last changes
+[1;31m|[m [1;31m|[m [1;32m|[m[1;31m\[m  
+[1;31m|[m [1;31m|[m [1;32m|[m[1;31m/[m  
+[1;31m|[m [1;31m|[m[1;31m/[m[1;32m|[m   
+[1;31m|[m * [1;32m|[m [33mfc8be86[m Changing layout
+[1;31m|[m * [1;32m|[m [33mc2dc2cb[m ¿Adding incomes api and axios library
+[1;31m|[m[1;31m/[m [1;32m/[m  
+* [1;32m|[m   [33m45e0001[m Merge pull request #6 from JosueGarciaAbata/josue
+[1;34m|[m[1;35m\[m [1;32m\[m  
+[1;34m|[m * [1;32m|[m [33m2736c26[m New files
+* [1;35m|[m [1;32m|[m [33m13fa2e7[m Merge pull request #5 from JosueGarciaAbata/josue
+[1;36m|[m[1;35m\[m[1;35m|[m [1;32m|[m 
+[1;36m|[m * [1;32m|[m   [33mf168339[m New changes
+[1;36m|[m [32m|[m[33m\[m [1;32m\[m  
+[1;36m|[m [32m|[m * [1;32m|[m [33m44c4f0f[m develop
+* [32m|[m [33m|[m [1;32m|[m [33m613e088[m Merge pull request #3 from JosueGarciaAbata/josue
+[34m|[m[32m\[m[32m|[m [33m|[m [1;32m|[m 
+[34m|[m * [33m|[m [1;32m|[m   [33m2e0e38b[m Fixing merge
+[34m|[m [36m|[m[34m\[m [33m\[m [1;32m\[m  
+[34m|[m [36m|[m[34m/[m [33m/[m [1;32m/[m  
+[34m|[m[34m/[m[36m|[m [33m|[m [1;32m|[m   
+* [36m|[m [33m|[m [1;32m|[m [33m37748b9[m Cambios
+[1;31m|[m * [33m|[m [1;32m|[m [33mc73cd70[m New changes
+[1;31m|[m * [33m|[m [1;32m|[m   [33m0f32e15[m Merge branch 'develop' of github.com:JosueGarciaAbata/agiles-proyecto into josue
+[1;31m|[m [1;32m|[m[1;33m\[m [33m\[m [1;32m\[m  
+[1;31m|[m [1;32m|[m * [33m\[m [1;32m\[m   [33m832dae0[m Merge branch 'develop' of https://github.com/JosueGarciaAbata/agiles-proyecto into develop
+[1;31m|[m [1;32m|[m [1;34m|[m[1;35m\[m [33m\[m [1;32m\[m  
+[1;31m|[m [1;32m|[m [1;34m|[m * [33m|[m [1;32m|[m [33md51f16e[m Merge pull request #2 from JosueGarciaAbata/josue
+[1;31m|[m [1;32m|[m[1;31m_[m[1;34m|[m[1;31m/[m[31m|[m [33m|[m [1;32m|[m 
+[1;31m|[m[1;31m/[m[1;32m|[m [1;34m|[m [31m|[m [33m|[m [1;32m|[m 
+[1;31m|[m [1;32m|[m * [31m|[m [33m|[m [1;32m|[m [33mbffca9f[m Changing error message
+[1;31m|[m [1;32m|[m[1;31m/[m [31m/[m [33m/[m [1;32m/[m  
+[1;31m|[m[1;31m/[m[1;32m|[m [31m|[m [33m|[m [1;32m|[m   
+* [1;32m|[m [31m|[m [33m|[m [1;32m|[m   [33m7748a9b[m Suppliers api module
+[32m|[m[33m\[m [1;32m\[m [31m\[m [33m\[m [1;32m\[m  
+[32m|[m * [1;32m\[m [31m\[m [33m\[m [1;32m\[m   [33m5126e57[m Merge pull request #1 from JosueGarciaAbata/josue
+[32m|[m [33m|[m[35m\[m [1;32m\[m [31m\[m [33m\[m [1;32m\[m  
+[32m|[m [33m|[m [35m|[m[33m_[m[1;32m|[m[33m_[m[31m|[m[33m/[m [1;32m/[m  
+[32m|[m [33m|[m[33m/[m[35m|[m [1;32m|[m [31m|[m [1;32m|[m   
+* [33m|[m [35m|[m [1;32m|[m [31m|[m [1;32m|[m [33m0e49893[m Suppliers api
+[35m|[m [33m|[m [35m|[m * [31m|[m [1;32m|[m [33m0ccfe70[m Fixing some bugs
+[35m|[m [33m|[m [35m|[m [31m|[m[31m/[m [1;32m/[m  
+[35m|[m [33m|[m [35m|[m * [1;32m/[m [33m4ec5bee[m Frontend
+[35m|[m [33m|[m [35m|[m[35m/[m [1;32m/[m  
+[35m|[m [33m|[m * [1;32m|[m   [33m5f6f130[m Fixing merge
+[35m|[m [33m|[m [36m|[m[33m\[m [1;32m\[m  
+[35m|[m [33m|[m [36m|[m[33m/[m [1;32m/[m  
+[35m|[m [33m|[m[33m/[m[36m|[m [1;32m|[m   
+[35m|[m * [36m|[m [1;32m|[m [33m6696c41[m Solucionar rutas api de ubicaciones
+[35m|[m * [36m|[m [1;32m|[m [33m123fd83[m Creacion de Controlador,Migracion y Modelo De Ubicacion
+[35m|[m[35m/[m [36m/[m [1;32m/[m  
+[35m|[m * [1;32m/[m [33mf409d46[m[33m ([m[1;32mmain[m[33m)[m Methods for the category api
+[35m|[m[35m/[m [1;32m/[m  
+* [1;32m|[m [33mafc4aac[m[33m ([m[1;31morigin/main[m[33m)[m Initial configurations
+* [1;32m|[m [33m65c9f53[m Initial configurations
+ [1;32m/[m  
+* [33m48ce292[m Test
+* [33m193ea4b[m New files

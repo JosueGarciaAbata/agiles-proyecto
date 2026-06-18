@@ -20,6 +20,10 @@ class JwtMiddleware
     {
         try {
             $user = JWTAuth::parseToken()->authenticate();
+
+            if ($user->role !== 'admin') {
+                return response()->json(['error' => 'Access denied: Only admins are allowed.'], 403);
+            }
         } catch (JWTException $e) {
             return response()->json(['error' => 'Token not valid'], 401);
         }

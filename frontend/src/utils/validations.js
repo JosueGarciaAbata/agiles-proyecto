@@ -12,6 +12,11 @@ const validationRules = {
     minLength: 3,
     message: "Contraseña invalida: minimo 3 caracteres",
   },
+  dni_usr: {
+    required: true,
+    regex: /^\d{10}$/,
+    message: "Contraseña invalida: 10 digitos",
+  },
   // Usuarios
   role: {
     required: true,
@@ -126,12 +131,14 @@ const validationRules = {
   cod_ass: {
     required: true,
     minLength: 3,
-    message: "Debe tener al menos 3 caracteres",
+    maxLength: 10,
+    message: "Debe tener al menos 3 caracteres y máximo 10",
   },
   ser_num_ass: {
     required: true,
     minLength: 8,
-    message: "Debe tener al menos 8 caracteres",
+    maxLength: 20,
+    message: "Debe tener al menos 8 caracteres y máximo 20",
   },
   id_loc_ass: {
     required: true,
@@ -147,6 +154,31 @@ const validationRules = {
     required: true,
     selected: true,
     message: "Debe seleccionar algún tipo",
+  },
+  // Mantenimiento
+  dni_res_main: {
+    required: true,
+    selected: true,
+    message: "Debe seleccionar algún responsable",
+  },
+  cod_main: {
+    required: true,
+    minLength: 3,
+    maxLength: 10,
+    message: "El código debe tener mínimo 3 y máximo 10 caracteres",
+  },
+  id_typ_main: {
+    required: true,
+    selected: true,
+    message: "Debe seleccionar algun mantenmiento",
+  },
+  created_at: {
+    required: true,
+    message: "Debe seleccionar una fecha",
+  },
+  ended_at: {
+    required: true,
+    message: "Debe seleccionar una fecha",
   },
 };
 // Todos los campos
@@ -201,13 +233,30 @@ export const validateField = (key, value) => {
   return ""; // Sin error
 };
 
-export const generateErrorMessage = (errors, fields) => {
+export const generateErrorMessage = (errors) => {
   let message = "";
 
-  fields.forEach((field) => {
-    if (errors[field.key]) {
-      message += errors[field.key] + " ";
+  console.log("Los errores son", errors);
+  console.log(Object.entries(errors));
+  Object.entries(errors).forEach(([key, errorMessages]) => {
+    if (Array.isArray(errorMessages)) {
+      message += errorMessages.join(" ") + " ";
+    } else if (typeof errorMessages === "string") {
+      message += errorMessages + " ";
     }
   });
-  return message.trim();
+
+  return message.trim(); // Eliminar espacios innecesarios al final
+};
+
+export const handleErrors = (errors) => {
+  const errorMessages = [];
+
+  for (const [key, messages] of Object.entries(errors)) {
+    messages.forEach((message) => {
+      errorMessages.push(`${message}`);
+    });
+  }
+
+  return errorMessages;
 };

@@ -172,10 +172,21 @@ class MaintenanceDetailController extends Controller
             }
 
             DB::commit();
+            $formattedData = [
+                'id' => $maintenance->id,
+                'cod_main' => $maintenance->cod_main,
+                'vis_main' => $maintenance->vis_main,
+                'created_at' => $maintenance->created_at,
+                'ended_at' => $maintenance->ended_at,
+                'responsable_Data' => $maintenance->responsible,
+                'type_data' => $maintenance->maintenanceType,
+                'responsable' => $maintenance->responsible->nam_res . ' ' . $maintenance->responsible->las_res,
+                'type' => $maintenance->maintenanceType->typ_main,
+            ];
 
             return response()->json([
                 'message' => 'Mantenimiento creado exitosamente.',
-                'results' => $maintenance,
+                'results' => $formattedData,
             ], 201);
         } catch (Exception $e) {
             DB::rollBack();
@@ -193,7 +204,10 @@ class MaintenanceDetailController extends Controller
 
             DB::beginTransaction();
 
-            $maintenance = Maintenance::findOrFail($id);
+            // Cargar la relación 'responsible' con 'with'
+            $maintenance = Maintenance::with('responsible', 'maintenanceType')->findOrFail($id);
+
+            // Actualizar el mantenimiento
             $maintenance->update([
                 'cod_main' => $validatedData['cod_main'],
                 'id_typ_main' => $validatedData['id_typ_main'],
@@ -203,11 +217,13 @@ class MaintenanceDetailController extends Controller
                 'created_at' => $validatedData['created_at'] ?? null,
             ]);
 
+            // Borrar los detalles antiguos
             MaintenanceDetail::where('id_main_bel', $maintenance->id)->each(function ($maintenanceDetail) {
                 $this->deleteOldRecords($maintenanceDetail->id);
                 $maintenanceDetail->delete();
             });
 
+            // Crear los nuevos detalles
             foreach ($validatedData['assets'] as $asset) {
                 $maintenanceDetail = new MaintenanceDetail();
                 $maintenanceDetail->id_main_bel = $maintenance->id;
@@ -221,11 +237,24 @@ class MaintenanceDetailController extends Controller
                 // Crear registros relacionados con el detalle
                 $this->createNewRecords($maintenanceDetail->id, [$asset]);
             }
+
             DB::commit();
 
+            // Sobrescribir 'responsible' con el nombre completo
+            $formattedData = [
+                'id' => $maintenance->id,
+                'cod_main' => $maintenance->cod_main,
+                'vis_main' => $maintenance->vis_main,
+                'created_at' => $maintenance->created_at,
+                'ended_at' => $maintenance->ended_at,
+                'responsable_data' => $maintenance->responsible,
+                'type_data' => $maintenance->maintenanceType,
+                'responsable' => $maintenance->responsible->nam_res . ' ' . $maintenance->responsible->las_res,
+                'type' => $maintenance->maintenanceType->typ_main,
+            ];
             return response()->json([
                 'message' => 'Mantenimiento actualizado exitosamente.',
-                'results' => $maintenance,
+                'results' => $formattedData,
             ], 200);
         } catch (ValidationException $e) {
             return response()->json([
@@ -240,6 +269,7 @@ class MaintenanceDetailController extends Controller
             ], 500);
         }
     }
+
 
     protected function deleteOldRecords($maintenanceDetailId)
     {

@@ -123,26 +123,40 @@ export const navigationAdmin = [
     icon: <InventoryIcon style={{ color: "white" }} />, // Ícono blanco
   },
   {
-    segment: "mantenimientos",
-    title: "Mantenimientos",
+    segment: "dashboard/maintance",
+    title: (
+      <Link
+        to={"/dashboard/maintance"}
+        style={{
+          display: "block",
+          width: "100%",
+          height: "100%",
+          textDecoration: "none",
+          color: "inherit",
+        }}
+      >
+        Mantenimientos
+      </Link>
+    ),
     icon: <HandymanIcon style={{ color: "white" }} />, // Ícono blanco
   },
   {
-    segment: "reports",
-    title: "Reports",
+    segment: "dashboard/reports",
+    title: (
+      <Link
+        to={"/dashboard/reports"}
+        style={{
+          display: "block",
+          width: "100%",
+          height: "100%",
+          textDecoration: "none",
+          color: "inherit",
+        }}
+      >
+        Reportes
+      </Link>
+    ),
     icon: <BarChartIcon style={{ color: "white" }} />, // Ícono blanco
-    children: [
-      {
-        segment: "sales",
-        title: "Sales",
-        icon: <DescriptionIcon style={{ color: "white" }} />, // Ícono blanco
-      },
-      {
-        segment: "traffic",
-        title: "Traffic",
-        icon: <DescriptionIcon style={{ color: "white" }} />, // Ícono blanco
-      },
-    ],
   },
 ];
 
@@ -166,26 +180,22 @@ export const navigationUser = [
     icon: <InventoryIcon style={{ color: "white" }} />, // Ícono blanco
   },
   {
-    segment: "mantenimientos",
-    title: "Mantenimientos",
+    segment: "dashboard/maintance",
+    title: (
+      <Link
+        to={"/dashboard/maintance"}
+        style={{
+          display: "block",
+          width: "100%",
+          height: "100%",
+          textDecoration: "none",
+          color: "inherit",
+        }}
+      >
+        Mantenimientos
+      </Link>
+    ),
     icon: <HandymanIcon style={{ color: "white" }} />, // Ícono blanco
-  },
-  {
-    segment: "reports",
-    title: "Reports",
-    icon: <BarChartIcon style={{ color: "white" }} />, // Ícono blanco
-    children: [
-      {
-        segment: "sales",
-        title: "Sales",
-        icon: <DescriptionIcon style={{ color: "white" }} />, // Ícono blanco
-      },
-      {
-        segment: "traffic",
-        title: "Traffic",
-        icon: <DescriptionIcon style={{ color: "white" }} />, // Ícono blanco
-      },
-    ],
   },
 ];
 

@@ -3,7 +3,7 @@ import Filters from "./Filters";
 import axiosInstance from "../../utils/api";
 import { getDecodedToken } from "../../utils/authService";
 
-const AssetFilters = ({ onFilterChange, onClear }) => {
+const AssetFilters = ({ onFilterChange }) => {
   const [locations, setLocations] = useState([]);
   const [incomes, setIncomes] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -72,7 +72,12 @@ const AssetFilters = ({ onFilterChange, onClear }) => {
   ];
 
   return (
-    <Filters data={data} onFilterChange={onFilterChange} onClear={onClear} />
+    <Filters
+      data={data}
+      onFilterChange={onFilterChange}
+      clearFilters={false}
+      setClearFilters={() => {}}
+    />
   );
 };
 

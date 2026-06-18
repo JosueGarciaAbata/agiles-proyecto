@@ -1,55 +1,28 @@
 import AssetBaseCreate from "./AssetBaseCreate";
-import axiosInstance from "../../utils/api";
-import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
-import { CircularProgress, Typography } from "@mui/material";
+import Loader from "../Loader";
+import { useDataContext } from "../../provider/DataContext";
 
 const AssetCreate = () => {
-  const [locations, setLocations] = useState([]);
-  const [incomes, setIncomes] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [isReady, setIsReady] = useState(false);
-
-  useEffect(() => {
-    const fetchAllData = async () => {
-      try {
-        const [locationsData, incomesData, categoriesData] = await Promise.all([
-          axiosInstance.get("/locations"),
-          axiosInstance.get("/assets/incomes/create"),
-          axiosInstance.get("/categories"),
-        ]);
-
-        setLocations(locationsData.data.results);
-        setIncomes(incomesData.data);
-        setCategories(categoriesData.data.results);
-
-        setIsReady(true);
-      } catch (error) {
-        toast.error("No se han podido obtener los datos.");
-      }
-    };
-    fetchAllData();
-  }, []);
-
+  const { data, isReady } = useDataContext();
   const resultsLocations =
-    locations.length > 0
-      ? locations.map((location) => ({
+    data?.locations.length > 0
+      ? data?.locations.map((location) => ({
           value: location.id,
           label: location.nam_loc,
         }))
       : [{ value: "", label: "No se han encontrado ubicaciones..." }];
 
   const resultsIncomes =
-    incomes.length > 0
-      ? incomes.map((income) => ({
+    data?.incomes.length > 0
+      ? data?.incomes.map((income) => ({
           value: income.id,
           label: income.cod_inc,
         }))
       : [{ value: "", label: "No se han encontrado ingresos..." }];
 
   const resultsCategories =
-    categories.length > 0
-      ? categories.map((category) => ({
+    data?.categories.length > 0
+      ? data?.categories.map((category) => ({
           value: category.id,
           label: category.nom_dis,
         }))
@@ -94,14 +67,7 @@ const AssetCreate = () => {
   ];
 
   if (!isReady) {
-    return (
-      <div style={{ textAlign: "center", marginTop: "20px" }}>
-        <CircularProgress />
-        <Typography variant="subtitle1" sx={{ marginTop: "10px" }}>
-          Cargando datos, por favor espera...
-        </Typography>
-      </div>
-    );
+    return <Loader />;
   }
 
   return (

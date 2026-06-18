@@ -87,7 +87,9 @@ class ResponsibleController extends Controller
 
             if ($responsible->maintenances()->exists()) {
                 return response()->json([
-                    'message' => 'No se puede eliminar responsables asociados a mantenimientos',
+                    'errors' => [
+                        'reason' => ['No se puede eliminar el responsable debido a que está asociado a al menos un mantenimiento.']
+                    ]
                 ], 400);
             }
 

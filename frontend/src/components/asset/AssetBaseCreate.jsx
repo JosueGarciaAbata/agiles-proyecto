@@ -1,35 +1,32 @@
+import {
+  validateField,
+  validateFields,
+  handleErrors,
+} from "../../utils/validations";
 import React, { useState } from "react";
 import { Box, Grid2, Typography, Button } from "@mui/material";
-
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 import CreateStyles from "../../generic/styles/CreateStyles";
 import DynamicField from "../../generic/DynamicField";
 import AssetTableCreate from "./AssetTableCreate";
 import axiosInstance from "../../utils/api";
-import { toast } from "react-toastify";
-import { validateField, validateFields } from "../../utils/validations";
-import { useNavigate } from "react-router-dom";
+import { useAssetsContext } from "../../provider/AssetsContext";
 
 const Entry = ({ fields, columns, defaultState }) => {
+  const { addAsset } = useAssetsContext();
   const [entity, setEntity] = useState(defaultState);
   const [relatedData, setRelatedData] = useState([]);
   const [errors, setErrors] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
+  const [isReady, setIsReady] = useState(false);
+  const [isDelete, setIsDelete] = useState(false);
   const [isCategorySelected, setIsCategorySelected] = useState(false);
-  const [currentPage, setCurrentPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(3);
   const navigate = useNavigate();
 
   const resetFields = () => {
     setEntity(defaultState);
     setRelatedData([]);
     setErrors({});
-  };
-
-  const handleChangePage = (event, newPage) => setCurrentPage(newPage);
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setCurrentPage(0);
   };
 
   // Basicamente valida un solo campo
@@ -89,7 +86,7 @@ const Entry = ({ fields, columns, defaultState }) => {
   const handleFetch = async (key, value) => {
     if (key === "id_cat_ass") {
       setIsCategorySelected(true);
-      setIsLoading(true);
+      setIsReady(true);
       resetComponents();
 
       try {
@@ -109,7 +106,7 @@ const Entry = ({ fields, columns, defaultState }) => {
         toast.error("No se ha podido obtener los componentes.");
         setRelatedData([]);
       } finally {
-        setIsLoading(false);
+        setIsReady(true);
       }
     }
   };
@@ -126,10 +123,10 @@ const Entry = ({ fields, columns, defaultState }) => {
     let hasErrors = false;
 
     const updatedRelatedData = relatedData.map((component) => {
-      const hasDescription = component.pivot?.description?.trim();
+      const description = component.pivot?.description?.trim();
 
-      // Error, no ha escrito en la tabla
-      if (!hasDescription) {
+      // Validar que la descripción exista y tenga entre 3 y 30 caracteres
+      if (!description || description.length < 3 || description.length > 200) {
         hasErrors = true;
         return { ...component, error: true };
       }
@@ -159,15 +156,10 @@ const Entry = ({ fields, columns, defaultState }) => {
     const isEntityValid = validateAll();
     const isTableValid = validateTableFields();
 
-    console.log(entity);
     if (isEntityValid && isTableValid) {
-      try {
-        await axiosInstance.post("/assets", { asset: entity });
-        resetFields();
-        toast.success("Activo creado con éxito.");
-      } catch (error) {
-        toast.error("No se ha podido crear el activo.");
-      }
+      addAsset(entity);
+      resetFields();
+      navigate("/dashboard/assets");
     }
   };
 
@@ -186,55 +178,50 @@ const Entry = ({ fields, columns, defaultState }) => {
         {/* Contenedor de la cuadrícula */}
         <Grid2 container spacing={3}>
           {fields.map((field) => (
-            <Grid2 item size={{ xs: 12, md: 6 }} key={field.key}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: "10px",
-                }}
+            <Grid2 item size={{ xs: 12, sm: 6, md: 6 }} key={field.key}>
+              {/* Título del campo */}
+              <Typography
+                variant="subtitle1"
+                width="100%"
+                color="#6068A5"
+                fontWeight="bold"
               >
-                {/* Título del campo */}
-                <Typography
-                  variant="subtitle1"
-                  width="100%"
-                  color="#6068A5"
-                  fontWeight="bold"
-                >
-                  {field.label}
-                </Typography>
-                {/* Campo dinámico */}
-                <DynamicField
-                  key={field.key}
-                  field={field}
-                  value={entity[field.key]}
-                  onChange={handleFieldChange}
-                  onFetch={handleFetch}
-                  error={errors[field.key]}
-                  helperText={errors[field.key]}
-                  readOnly={false}
-                />
-              </Box>
+                {field.label}
+              </Typography>
+              {/* Campo dinámico */}
+              <DynamicField
+                key={field.key}
+                field={field}
+                value={entity[field.key]}
+                onChange={handleFieldChange}
+                onFetch={handleFetch}
+                error={errors[field.key]}
+                helperText={errors[field.key]}
+                readOnly={false}
+              />
             </Grid2>
           ))}
         </Grid2>
 
         {/* Generar tabla */}
-        {isCategorySelected && relatedData.length > 0 ? (
-          <Box marginTop="30px">
-            <AssetTableCreate
-              data={relatedData}
-              isLoading={isLoading}
-              columns={columns}
-              currentPage={currentPage}
-              rowsPerPage={rowsPerPage}
-              handleChangePage={handleChangePage}
-              handleChangeRowsPerPage={handleChangeRowsPerPage}
-              handleDescription={handleDescription}
-              readOnly={false}
-            />
-          </Box>
+        {isCategorySelected ? (
+          relatedData.length > 0 ? (
+            <Box marginTop="30px">
+              <AssetTableCreate
+                data={relatedData}
+                setIsDelete={setIsDelete}
+                isDelete={isDelete}
+                isReady={isReady}
+                columns={columns}
+                handleDescription={handleDescription}
+                readOnly={false}
+              />
+            </Box>
+          ) : (
+            <Typography marginTop="30px" color="#6068A5">
+              No se han encontrado componentes para el dispositivo.
+            </Typography>
+          )
         ) : null}
       </Box>
 

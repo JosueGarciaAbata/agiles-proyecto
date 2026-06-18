@@ -2,8 +2,19 @@ import axiosInstance from "../../utils/api";
 import React, { useEffect, useState } from "react";
 import GenericManager from "../GenericManager";
 import { toast } from "react-toastify";
+import { getDecodedToken } from "../../utils/authService";
+import { useNavigate } from "react-router-dom";
 
 const IncomeManager = () => {
+  const role = getDecodedToken()?.role;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (role !== "admin") {
+      navigate("/dashboard/maintance");
+    }
+  }, [role, navigate]);
+
   const [suppliers, setSuppliers] = useState([]);
 
   useEffect(() => {

@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import Box from "@mui/material/Box";
+import React, { useState } from "react";
 import { Button, Typography } from "@mui/material";
-import CreateStyles from "../../generic/styles/CreateStyles";
-import axiosInstance from "../../utils/api";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FormControlLabel, Switch } from "@mui/material";
+import { Grid2 } from "@mui/material";
+import Box from "@mui/material/Box";
+import CreateStyles from "../../generic/styles/CreateStyles";
 import DynamicField from "../../generic/DynamicField";
 import AssetTableCreate from "./AssetTableCreate";
-import { Grid2 } from "@mui/material";
+import { useAssetsContext } from "../../provider/AssetsContext";
 
 const AssetBaseView = ({
   asset,
+  isReady,
+  relatedData,
   fields,
   columns,
   errors,
@@ -20,17 +22,10 @@ const AssetBaseView = ({
   handleDescription,
   handleFieldChange,
 }) => {
-  const [isEditing, setIsEditing] = useState(false);
-  const [currentPage, setCurrentPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(3);
   const navigate = useNavigate();
-
-  const handleChangePage = (event, newPage) => setCurrentPage(newPage);
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setCurrentPage(0);
-  };
+  const { updateAsset } = useAssetsContext();
+  const [isEditing, setIsEditing] = useState(false);
+  const [isDelete, setIsDelete] = useState(false);
 
   const handleFetch = async (param) => {};
 
@@ -41,17 +36,11 @@ const AssetBaseView = ({
   const handleUpdate = async () => {
     const isEntityValid = validateAll();
     const isTableValid = validateTableFields();
+
     if (isEntityValid && isTableValid) {
-      try {
-        await axiosInstance.put(`/assets/${asset.id}`, {
-          asset: asset,
-        });
-        toast.success("Activo actualizado con éxito.");
-        setIsEditing(false);
-        navigate("/dashboard/assets");
-      } catch (error) {
-        toast.error("No se ha podido crear el activo.");
-      }
+      updateAsset(asset);
+      setIsEditing(false);
+      navigate("/dashboard/assets");
     }
   };
 
@@ -87,52 +76,41 @@ const AssetBaseView = ({
         <Grid2 container spacing={3}>
           {fields.map((field) => (
             <Grid2 item size={{ xs: 12, md: 6 }} key={field.key}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: "10px",
-                }}
+              {/* Título del campo */}
+              <Typography
+                variant="subtitle1"
+                width="100%"
+                color="#6068A5"
+                fontWeight="bold"
               >
-                {/* Título del campo */}
-                <Typography
-                  variant="subtitle1"
-                  width="100%"
-                  color="#6068A5"
-                  fontWeight="bold"
-                >
-                  {field.label}
-                </Typography>
-                {/* Campo dinámico */}
-                <DynamicField
-                  key={field.key}
-                  field={field}
-                  value={asset[field.key]}
-                  onChange={handleFieldChange}
-                  onFetch={handleFetch}
-                  error={errors[field.key]}
-                  helperText={errors[field.key]}
-                  readOnly={!isEditing || !field.editable}
-                />
-              </Box>
+                {field.label}
+              </Typography>
+              {/* Campo dinámico */}
+              <DynamicField
+                key={field.key}
+                field={field}
+                value={asset[field.key]}
+                onChange={handleFieldChange}
+                onFetch={handleFetch}
+                error={errors[field.key]}
+                helperText={errors[field.key]}
+                readOnly={!isEditing || !field.editable}
+              />
             </Grid2>
           ))}
         </Grid2>
-      </Box>
-
-      {/* Poner la tabla */}
-      <Box marginTop="30px" width="90%">
-        <AssetTableCreate
-          data={asset.components || []}
-          columns={columns}
-          currentPage={currentPage}
-          rowsPerPage={rowsPerPage}
-          handleChangePage={handleChangePage}
-          handleChangeRowsPerPage={handleChangeRowsPerPage}
-          handleDescription={handleDescription}
-          readOnly={!isEditing}
-        />
+        {/* Poner la tabla */}
+        <Box marginTop="30px">
+          <AssetTableCreate
+            data={relatedData || []}
+            isReady={isReady}
+            isDelete={isDelete}
+            setIsDelete={setIsDelete}
+            columns={columns}
+            handleDescription={handleDescription}
+            readOnly={!isEditing}
+          />
+        </Box>
       </Box>
 
       {/* Footer */}

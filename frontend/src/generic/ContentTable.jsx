@@ -1,18 +1,14 @@
 import React from "react";
+import GenericTable from "../components/GenericTable";
 import {
-  Table,
   TableBody,
   TableCell,
-  TableContainer,
   TableHead,
   TableRow,
-  Paper,
   IconButton,
-  TablePagination,
 } from "@mui/material";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import CustomTablePaginationActions from "./CustomTablePaginationActions";
 import tableStyles from "./styles/TableStyles";
 import dayjs from "dayjs";
 import { getDecodedToken } from "../utils/authService";
@@ -22,10 +18,8 @@ const ContentTable = ({
   columns,
   onView,
   onDelete,
-  currentPage,
-  rowsPerPage,
-  handleChangePage,
-  handleChangeRowsPerPage,
+  setIsDelete,
+  isDelete,
 }) => {
   const decodedToken = getDecodedToken();
   const currentUserEmail = decodedToken.email;
@@ -48,27 +42,24 @@ const ContentTable = ({
 
   return (
     <>
-      <TableContainer
-        className="table-container"
-        component={Paper}
-        sx={tableStyles.tableContainer}
+      <GenericTable
+        data={data}
+        dataCount={data.length}
+        setIsDelete={setIsDelete}
+        isDelete={isDelete}
       >
-        <Table>
-          <TableHead sx={tableStyles.tableHead}>
-            <TableRow>
-              {columns.map((column) => (
-                <TableCell key={column.key}>{column.label}</TableCell>
-              ))}
-              <TableCell align="center">Acciones</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {data
-              .slice(
-                currentPage * rowsPerPage,
-                currentPage * rowsPerPage + rowsPerPage
-              )
-              .map((item) => (
+        {(currentPageData) => (
+          <>
+            <TableHead sx={tableStyles.tableHead}>
+              <TableRow>
+                {columns.map((column) => (
+                  <TableCell key={column.key}>{column.label}</TableCell>
+                ))}
+                <TableCell align="center">Acciones</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {currentPageData.map((item) => (
                 <TableRow key={item.id}>
                   {columns.map((column) => (
                     <TableCell key={column.key}>
@@ -82,7 +73,6 @@ const ContentTable = ({
                     <IconButton
                       onClick={() => onDelete(item.id)}
                       color="secondary"
-                      // Esto cambiar
                       disabled={currentUserEmail === item.email}
                     >
                       <DeleteForeverIcon />
@@ -90,26 +80,10 @@ const ContentTable = ({
                   </TableCell>
                 </TableRow>
               ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      <TablePagination
-        component="div"
-        count={data.length}
-        page={currentPage}
-        rowsPerPage={rowsPerPage}
-        rowsPerPageOptions={[3, 5]}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-        labelRowsPerPage={
-          <span style={tableStyles.labelRowsPerPage}>Filas por página</span>
-        }
-        labelDisplayedRows={() => ""}
-        ActionsComponent={(props) => (
-          <CustomTablePaginationActions {...props} />
+            </TableBody>
+          </>
         )}
-        sx={tableStyles.pagination}
-      />
+      </GenericTable>
     </>
   );
 };

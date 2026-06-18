@@ -111,9 +111,16 @@ class SuppliersController extends Controller
 
     public function destroy($id)
     {
-        // Buscar el proveedor y manejar errores si no existe
         try {
             $supplier = Supplier::findOrFail($id);
+
+            if ($supplier->incomes()->exists()) {
+                return response()->json([
+                    'errors' => [
+                        'reason' => ['No se puede eliminar el proveedor debido a que está asociado a al menos un ingreso.']
+                    ]
+                ], 400);
+            }
             $supplier->delete();
 
             return response()->json([
@@ -122,7 +129,6 @@ class SuppliersController extends Controller
         } catch (ModelNotFoundException $e) {
             return response()->json([
                 'message' => 'Proveedor no encontrado',
-                'error' => $e->getMessage(),
             ], 404);
         }
     }

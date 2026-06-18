@@ -1,6 +1,18 @@
 import GenericManager from "../GenericManager";
+import { getDecodedToken } from "../../utils/authService";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SupplierManager = () => {
+  const role = getDecodedToken()?.role;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (role !== "admin") {
+      navigate("/dashboard/maintance");
+    }
+  }, [role, navigate]);
+
   const apiConfig = {
     fetchAll: "/suppliers",
     fetchOne: "/suppliers",

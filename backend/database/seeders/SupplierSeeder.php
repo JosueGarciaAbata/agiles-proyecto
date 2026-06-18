@@ -12,17 +12,18 @@ class SupplierSeeder extends Seeder
     public function run(): void
     {
         Supplier::create([
-            'id_num_sup' => '1850547756',
-            'nam_sup' => 'Proveedor Uno',
-            'ema_sup' => 'proveedor1@example.com',
-            'pho_sup' => '1234567890',
+            'id_num_sup' => '1723456789',
+            'nam_sup' => 'Distribuidora Andina S.A.',
+            'ema_sup' => 'contacto@andina.com',
+            'pho_sup' => '022345678',
         ]);
 
         Supplier::create([
-            'id_num_sup' => '1850547751',
-            'nam_sup' => 'Proveedor Dos',
-            'ema_sup' => 'proveedor2@example.com',
-            'pho_sup' => '0987654321',
+            'id_num_sup' => '0998765432',
+            'nam_sup' => 'Importadora Quito LTDA',
+            'ema_sup' => 'ventas@quitoimport.com',
+            'pho_sup' => '023456789',
         ]);
+
     }
 }

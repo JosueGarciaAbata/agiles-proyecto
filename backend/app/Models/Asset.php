@@ -38,4 +38,8 @@ class Asset extends Model
             ->withTimestamps();
     }
 
+    public function maintenanceDetails()
+    {
+        return $this->hasMany(MaintenanceDetail::class, 'id_ass_bel');
+    }
 }

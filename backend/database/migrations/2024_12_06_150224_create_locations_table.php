@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
             $table->string("cod_loc", 10)->unique();
-            $table->string("nam_loc", 25);
+            $table->string("nam_loc", 45);
             $table->timestamps();
         });
     }

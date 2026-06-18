@@ -1,6 +1,18 @@
 import GenericManager from "../GenericManager";
+import { getDecodedToken } from "../../utils/authService";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ResponsibleManager = () => {
+  const role = getDecodedToken()?.role;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (role !== "admin") {
+      navigate("/dashboard/maintance");
+    }
+  }, [role, navigate]);
+
   const apiConfig = {
     fetchAll: "/responsibles",
     fetchOne: "/responsibles",
@@ -79,7 +91,7 @@ const ResponsibleManager = () => {
     { key: "is_ext", label: "Tipo" },
   ];
 
-  const message = "nombre";
+  const message = "dni_res";
 
   const searchBy = "cedula";
 
